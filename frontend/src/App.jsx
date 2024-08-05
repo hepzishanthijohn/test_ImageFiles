@@ -8,7 +8,7 @@ function App() {
 
 
  useEffect(() => {
-  axios.get('http://localhost:5003/getImage')
+  axios.get('https://test-imagefiles.onrender.com/getImage')
      .then((res) =>{
       setImage(res.data[3].image)
      })
@@ -18,7 +18,7 @@ function App() {
   const handleUpload =(e) =>{
     const formdata = new FormData()
     formdata.append('file', file)
-     axios.post('http://localhost:5003/upload',formdata)
+     axios.post('https://test-imagefiles.onrender.com/upload',formdata)
      .then((res) =>{
       console.log(res)
      })
@@ -31,7 +31,7 @@ function App() {
         <input type="file" onChange={e => setFile(e.target.files[0])}/>
         <button onClick={handleUpload}>upload</button>
         <br />
-        <img src={`http://localhost:5003/images/${image}`} alt="" />
+        <img src={`https://test-imagefiles.onrender.com/images/${image}`} alt="" />
       </div>
     </>
   )
